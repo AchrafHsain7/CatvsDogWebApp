@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1 id="Title">Cats Vs Dog AI!</h1>
+<form action="/process" method="post">
+    <select name="animal" required>
+        <option disabled selected>Animal</option>
+        {% for animal in animals %}
+        <option value="{{animal}}">{{animal}}</option>
+        {% endfor %}
+    </select>
+    <input name="image" type="file">
+    <button type="submit">AI this!</button>
+</form>
+{% endblock %}
